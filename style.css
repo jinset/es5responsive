@@ -145,7 +145,8 @@ body {
   flex-flow: column-reverse;
 }
 
-label, input {
+label,
+input {
   transition: all 0.2s;
   touch-action: manipulation;
 }
@@ -193,7 +194,6 @@ input:placeholder-shown + label {
 ::-webkit-input-placeholder {
   opacity: 0;
   transition: inherit;
-  
 }
 
 input:focus::-webkit-input-placeholder {
@@ -206,9 +206,7 @@ input:focus + label {
   cursor: pointer;
 }
 
-
 /* BTN style*/
-
 
 .btn {
   width: 100%;
@@ -232,6 +230,26 @@ input:focus + label {
 }
 .btn-gold:active {
   background-color: #f6bc25;
+}
+
+.loader {
+  border: 1em solid #f3f3f3; /* Light grey */
+  border-top: 1em solid #004a80; /* Blue */
+  border-radius: 50%;
+  width: 3.375rem;
+  height: 3.375rem;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*Option*/
@@ -274,7 +292,9 @@ input:focus + label {
   flex: 1 1 auto;
   align-self: auto;
 }
-.text-option-result h2, #name-span, #age-span {
+.text-option-result h2,
+#name-span,
+#age-span {
   font-size: 1.375rem;
 }
 
@@ -316,7 +336,7 @@ input:focus + label {
   padding: 0;
 }
 .number-list-li {
-  list-style-type:none;
+  list-style-type: none;
   font-size: 1.125em;
   line-height: 1.625em;
 }
@@ -325,17 +345,16 @@ input:focus + label {
   padding: 0;
 }
 .relatives-list-li {
-  list-style-type:none;
+  list-style-type: none;
   font-size: 1.125em;
   line-height: 1.625em;
 }
 /* Error  */
 .error-border {
-  border: 2px solid #DC0015  !important;
+  border: 2px solid #dc0015 !important;
 }
 .error-label {
-  color: #DC0015 ;
-
+  color: #dc0015;
 }
 
 /* tablet view*/
@@ -343,7 +362,6 @@ input:focus + label {
 @media only screen and (min-width: 576px) {
   .btn-form {
     padding-top: 24px;
-  
   }
   .padding-r-12 {
     padding-right: 0.75rem;
@@ -376,5 +394,3 @@ input:focus + label {
   clear: both;
   display: grid;
 }
-
-

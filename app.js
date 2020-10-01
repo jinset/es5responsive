@@ -13,6 +13,8 @@ $("#btn-go").click(function() {
   });
 
   if (validEmail) {
+    document.getElementById('btngo').style.display = 'none';
+    document.getElementById('loader').style.display = 'block';
     sendValue(email);
     hideError();
   } else {
@@ -53,6 +55,8 @@ function sendValue(email) {
       showError();
     },
     success: function(data) {
+      document.getElementById('btngo').style.display = 'block';
+      document.getElementById('loader').style.display = 'none';
       successSend(data);
     }
   });
@@ -76,13 +80,14 @@ function searchSuccess() {
 function showError() {
   document.querySelector("#email").classList.add("error-border");
   document.querySelector("#input-label").classList.add("error-label");
-  document.querySelector("#input-label").textContent= "Please add a valid email address";
+  document.querySelector("#input-label").textContent =
+    "Please add a valid email address";
 }
 
 function hideError() {
   document.querySelector("#email").classList.remove("error-border");
   document.querySelector("#input-label").classList.remove("error-label");
-  document.querySelector("#input-label").textContent= "EMAIL";
+  document.querySelector("#input-label").textContent = "EMAIL";
 }
 
 function successSend(person) {
